@@ -69,7 +69,7 @@ import { useGlobalLitegraph } from '@/composables/useGlobalLitegraph'
 import { useLitegraphSettings } from '@/composables/useLitegraphSettings'
 import { usePaste } from '@/composables/usePaste'
 import { useWorkflowAutoSave } from '@/composables/useWorkflowAutoSave'
-import { useWorkflowPersistence } from '@/composables/useWorkflowPersistence'
+// import { useWorkflowPersistence } from '@/composables/useWorkflowPersistence'
 import { CORE_SETTINGS } from '@/constants/coreSettings'
 import { i18n, t } from '@/i18n'
 import type { NodeId } from '@/schemas/comfyWorkflowSchema'
@@ -265,7 +265,7 @@ const loadCustomNodesI18n = async () => {
 }
 
 const comfyAppReady = ref(false)
-const workflowPersistence = useWorkflowPersistence()
+// const workflowPersistence = useWorkflowPersistence()
 // @ts-expect-error fixme ts strict error
 useCanvasDrop(canvasRef)
 useLitegraphSettings()
@@ -324,8 +324,8 @@ onMounted(async () => {
   )
 
   // Restore workflow and workflow tabs state from storage
-  await workflowPersistence.restorePreviousWorkflow()
-  workflowPersistence.restoreWorkflowTabsState()
+  //await workflowPersistence.restorePreviousWorkflow()
+  //workflowPersistence.restoreWorkflowTabsState()
 
   // Initialize release store to fetch releases from comfy-api (fire-and-forget)
   const { useReleaseStore } = await import('@/stores/releaseStore')
